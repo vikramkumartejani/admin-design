@@ -1,0 +1,321 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "title": "Life Coaching - 1hr",
+      "provider": "John Doe",
+      "status": "Published",
+      "category": "Coaching",
+      "price": 2000,
+      "rating": 4.8,
+      "reviews": 24,
+      "dateCreated": "2024-01-15",
+      "description": "Professional life coaching session to help you achieve your goals and overcome challenges."
+    },
+    {
+      "id": 2,
+      "title": "Social Media Strategy",
+      "provider": "Jane M.",
+      "status": "Published",
+      "category": "Digital Services",
+      "price": 3500,
+      "rating": 4.9,
+      "reviews": 18,
+      "dateCreated": "2024-01-14",
+      "description": "Comprehensive social media strategy development for businesses and influencers."
+    },
+    {
+      "id": 3,
+      "title": "Web Development",
+      "provider": "Mike Smith",
+      "status": "Flagged",
+      "category": "Technology",
+      "price": 20000,
+      "rating": 4.7,
+      "reviews": 32,
+      "dateCreated": "2024-01-13",
+      "description": "Custom website development with modern design and responsive functionality."
+    },
+    {
+      "id": 4,
+      "title": "Graphic Design",
+      "provider": "Sarah Johnson",
+      "status": "Unpublished",
+      "category": "Creative",
+      "price": 1500,
+      "rating": 4.6,
+      "reviews": 28,
+      "dateCreated": "2024-01-12",
+      "description": "Professional graphic design services for logos, branding, and marketing materials."
+    },
+    {
+      "id": 5,
+      "title": "Business Consulting",
+      "provider": "David Wilson",
+      "status": "Published",
+      "category": "Business",
+      "price": 5000,
+      "rating": 4.8,
+      "reviews": 15,
+      "dateCreated": "2024-01-11",
+      "description": "Strategic business consulting to help grow and optimize your business operations."
+    },
+    {
+      "id": 6,
+      "title": "Content Writing",
+      "provider": "Lisa Brown",
+      "status": "Published",
+      "category": "Creative",
+      "price": 800,
+      "rating": 4.5,
+      "reviews": 42,
+      "dateCreated": "2024-01-10",
+      "description": "High-quality content writing for blogs, websites, and marketing campaigns."
+    },
+    {
+      "id": 7,
+      "title": "SEO Optimization",
+      "provider": "Tom Davis",
+      "status": "Flagged",
+      "category": "Digital Services",
+      "price": 1200,
+      "rating": 4.7,
+      "reviews": 26,
+      "dateCreated": "2024-01-09",
+      "description": "Search engine optimization to improve your website's visibility and rankings."
+    },
+    {
+      "id": 8,
+      "title": "Video Editing",
+      "provider": "Emma White",
+      "status": "Published",
+      "category": "Creative",
+      "price": 2500,
+      "rating": 4.6,
+      "reviews": 19,
+      "dateCreated": "2024-01-08",
+      "description": "Professional video editing for YouTube, social media, and marketing content."
+    },
+    {
+      "id": 9,
+      "title": "Data Analysis",
+      "provider": "Chris Lee",
+      "status": "Published",
+      "category": "Technology",
+      "price": 4000,
+      "rating": 4.9,
+      "reviews": 12,
+      "dateCreated": "2024-01-07",
+      "description": "Data analysis and insights to help make informed business decisions."
+    },
+    {
+      "id": 10,
+      "title": "Marketing Strategy",
+      "provider": "Anna Garcia",
+      "status": "Unpublished",
+      "category": "Business",
+      "price": 3000,
+      "rating": 4.7,
+      "reviews": 21,
+      "dateCreated": "2024-01-06",
+      "description": "Comprehensive marketing strategy development and implementation."
+    },
+    {
+      "id": 11,
+      "title": "Mobile App Development",
+      "provider": "Robert Chen",
+      "status": "Published",
+      "category": "Technology",
+      "price": 25000,
+      "rating": 4.8,
+      "reviews": 8,
+      "dateCreated": "2024-01-05",
+      "description": "Custom mobile app development for iOS and Android platforms."
+    },
+    {
+      "id": 12,
+      "title": "Logo Design",
+      "provider": "Maria Rodriguez",
+      "status": "Published",
+      "category": "Creative",
+      "price": 1000,
+      "rating": 4.6,
+      "reviews": 35,
+      "dateCreated": "2024-01-04",
+      "description": "Unique and memorable logo design for your brand identity."
+    },
+    {
+      "id": 13,
+      "title": "Financial Planning",
+      "provider": "James Taylor",
+      "status": "Published",
+      "category": "Business",
+      "price": 6000,
+      "rating": 4.9,
+      "reviews": 14,
+      "dateCreated": "2024-01-03",
+      "description": "Personal and business financial planning and advisory services."
+    },
+    {
+      "id": 14,
+      "title": "Email Marketing",
+      "provider": "Jennifer Adams",
+      "status": "Flagged",
+      "category": "Digital Services",
+      "price": 900,
+      "rating": 4.5,
+      "reviews": 29,
+      "dateCreated": "2024-01-02",
+      "description": "Email marketing campaigns and automation for business growth."
+    },
+    {
+      "id": 15,
+      "title": "Photography",
+      "provider": "Kevin Martinez",
+      "status": "Published",
+      "category": "Creative",
+      "price": 1800,
+      "rating": 4.7,
+      "reviews": 16,
+      "dateCreated": "2024-01-01",
+      "description": "Professional photography services for events, portraits, and commercial use."
+    }
+  ],
+  "flaggedHiddenServices": [
+    {
+      "id": 101,
+      "title": "Life Coaching - 1hr",
+      "provider": "John Doe",
+      "status": "Flagged",
+      "flagReason": "Misleading pricing",
+      "category": "Coaching",
+      "dateFlagged": "2024-01-15"
+    },
+    {
+      "id": 102,
+      "title": "Social Media Strategy",
+      "provider": "Jane M.",
+      "status": "Hidden",
+      "flagReason": "Inappropriate content",
+      "category": "Digital Services",
+      "dateFlagged": "2024-01-14"
+    },
+    {
+      "id": 103,
+      "title": "Web Development",
+      "provider": "Mike Smith",
+      "status": "Flagged",
+      "flagReason": "Spam content",
+      "category": "Technology",
+      "dateFlagged": "2024-01-13"
+    },
+    {
+      "id": 104,
+      "title": "Graphic Design",
+      "provider": "Sarah Johnson",
+      "status": "Hidden",
+      "flagReason": "Violation of terms",
+      "category": "Creative",
+      "dateFlagged": "2024-01-12"
+    },
+    {
+      "id": 105,
+      "title": "Business Consulting",
+      "provider": "David Wilson",
+      "status": "Flagged",
+      "flagReason": "Misleading information",
+      "category": "Business",
+      "dateFlagged": "2024-01-11"
+    },
+    {
+      "id": 106,
+      "title": "Content Writing",
+      "provider": "Lisa Brown",
+      "status": "Hidden",
+      "flagReason": "Quality issues",
+      "category": "Creative",
+      "dateFlagged": "2024-01-10"
+    },
+    {
+      "id": 107,
+      "title": "SEO Optimization",
+      "provider": "Tom Davis",
+      "status": "Flagged",
+      "flagReason": "Spam content",
+      "category": "Digital Services",
+      "dateFlagged": "2024-01-09"
+    },
+    {
+      "id": 108,
+      "title": "Video Editing",
+      "provider": "Emma White",
+      "status": "Hidden",
+      "flagReason": "Copyright violation",
+      "category": "Creative",
+      "dateFlagged": "2024-01-08"
+    },
+    {
+      "id": 109,
+      "title": "Data Analysis",
+      "provider": "Chris Lee",
+      "status": "Flagged",
+      "flagReason": "Misleading claims",
+      "category": "Technology",
+      "dateFlagged": "2024-01-07"
+    },
+    {
+      "id": 110,
+      "title": "Marketing Strategy",
+      "provider": "Anna Garcia",
+      "status": "Hidden",
+      "flagReason": "Inappropriate content",
+      "category": "Business",
+      "dateFlagged": "2024-01-06"
+    },
+    {
+      "id": 111,
+      "title": "Mobile App Development",
+      "provider": "Robert Chen",
+      "status": "Flagged",
+      "flagReason": "Spam content",
+      "category": "Technology",
+      "dateFlagged": "2024-01-05"
+    },
+    {
+      "id": 112,
+      "title": "Logo Design",
+      "provider": "Maria Rodriguez",
+      "status": "Hidden",
+      "flagReason": "Quality issues",
+      "category": "Creative",
+      "dateFlagged": "2024-01-04"
+    },
+    {
+      "id": 113,
+      "title": "Financial Planning",
+      "provider": "James Taylor",
+      "status": "Flagged",
+      "flagReason": "Misleading information",
+      "category": "Business",
+      "dateFlagged": "2024-01-03"
+    },
+    {
+      "id": 114,
+      "title": "Email Marketing",
+      "provider": "Jennifer Adams",
+      "status": "Hidden",
+      "flagReason": "Spam content",
+      "category": "Digital Services",
+      "dateFlagged": "2024-01-02"
+    },
+    {
+      "id": 115,
+      "title": "Photography",
+      "provider": "Kevin Martinez",
+      "status": "Flagged",
+      "flagReason": "Inappropriate content",
+      "category": "Creative",
+      "dateFlagged": "2024-01-01"
+    }
+  ]
+}
