@@ -1,8 +1,9 @@
+import UserReports from '@/components/Reports/UserReports/UserReports'
 import React from 'react'
 
 const page = () => {
     return (
-        <div>page</div>
+        <UserReports/>
     )
 }
 

@@ -501,7 +501,9 @@ const TransactionLogs = () => {
                                                         onClick={() => handleViewTransaction(transaction.id)}
                                                         className="h-[38px] w-[38px] border border-[#25252526] rounded-[11px] flex items-center justify-center hover:bg-gray-100 transition-colors duration-200"
                                                     >
-                                                        <ArrowUpRight className="w-4 h-4 text-[#252525]" />
+                                                        <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M5.28809 13.5527L12.1824 6.65844M6.34875 6.12811H11.9627C12.3769 6.12811 12.7127 6.4639 12.7127 6.87811V12.4921" stroke="#252525" strokeWidth="2" strokeLinecap="round" />
+                                                        </svg>
                                                     </RippleButton>
                                                 </td>
                                             )}

@@ -74,22 +74,22 @@ const TransactionsReport = () => {
                 transaction.provider.toLowerCase().includes(searchTerm.toLowerCase()) ||
                 transaction.service.toLowerCase().includes(searchTerm.toLowerCase())
             const matchesStatus = statusFilter === 'all' || transaction.status.toLowerCase() === statusFilter.toLowerCase()
-            
+
             // Date range filtering
             let matchesDate = true
             if (dateRangeFilter !== 'all') {
                 console.log('📅 Date filtering active for:', dateRangeFilter)
-                
+
                 // Parse transaction date (format: 2025-08-29)
                 const [year, month, day] = transaction.date.split('-').map(Number)
                 const transactionDate = new Date(year, month - 1, day) // month is 0-indexed
-                
+
                 // Get current date
                 const now = new Date()
                 const currentYear = now.getFullYear()
                 const currentMonth = now.getMonth() // 0-indexed
                 const currentDay = now.getDate()
-                
+
                 // Create date objects for comparison
                 const today = new Date(currentYear, currentMonth, currentDay)
                 const yesterday = new Date(currentYear, currentMonth, currentDay - 1)
@@ -235,9 +235,9 @@ const TransactionsReport = () => {
     }
 
     const handleColumnToggle = (columnKey: string) => {
-        setColumns(prev => 
-            prev.map(col => 
-                col.key === columnKey 
+        setColumns(prev =>
+            prev.map(col =>
+                col.key === columnKey
                     ? { ...col, visible: !col.visible }
                     : col
             )
@@ -534,9 +534,9 @@ const TransactionsReport = () => {
                                                         className="h-[38px] w-[38px] border border-[#25252526] rounded-[11px] flex items-center justify-center hover:bg-gray-100 transition-colors duration-200"
                                                     >
                                                         <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M11.6849 9.8404C11.6849 11.3254 10.4849 12.5254 8.99994 12.5254C7.51494 12.5254 6.31494 11.3254 6.31494 9.8404C6.31494 8.3554 7.51494 7.1554 8.99994 7.1554C10.4849 7.1554 11.6849 8.3554 11.6849 9.8404Z" stroke="#252525" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                                            <path d="M8.99988 16.0429C11.6474 16.0429 14.1149 14.4829 15.8324 11.7829C16.5074 10.7254 16.5074 8.9479 15.8324 7.8904C14.1149 5.1904 11.6474 3.6304 8.99988 3.6304C6.35238 3.6304 3.88488 5.1904 2.16738 7.8904C1.49238 8.9479 1.49238 10.7254 2.16738 11.7829C3.88488 14.4829 6.35238 16.0429 8.99988 16.0429Z" stroke="#252525" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                                            <path d="M5.28809 13.5527L12.1824 6.65844M6.34875 6.12811H11.9627C12.3769 6.12811 12.7127 6.4639 12.7127 6.87811V12.4921" stroke="#252525" strokeWidth="2" strokeLinecap="round" />
                                                         </svg>
+
                                                     </RippleButton>
                                                 </td>
                                             )}
