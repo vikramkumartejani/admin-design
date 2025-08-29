@@ -47,7 +47,7 @@ const SortableHeader: React.FC<SortableHeaderProps> = ({
             : "justify-start"
         }`}
       >
-        <span className="text-[#252525] text-[16px] font-medium leading-[32px]">
+        <span className="text-[#252525] text-[16px] font-semibold leading-[32px]">
           {children}
         </span>
         <div className="space-y-[-10px]">

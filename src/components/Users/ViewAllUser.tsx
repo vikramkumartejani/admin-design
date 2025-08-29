@@ -82,9 +82,7 @@ const ViewAllUser = () => {
         let filtered = users.filter(user => {
             const matchesSearch = user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                 user.email.toLowerCase().includes(searchTerm.toLowerCase())
-            const matchesRole = roleFilter === 'all' ||
-                (roleFilter === 'service-provider' && user.role === 'Service Provider') ||
-                (roleFilter === 'customer' && user.role === 'Customer')
+            const matchesRole = roleFilter === 'all' || user.role === roleFilter
             const matchesStatus = statusFilter === 'all' ||
                 user.status.toLowerCase() === statusFilter.toLowerCase()
 
@@ -324,15 +322,21 @@ const ViewAllUser = () => {
                         filters={[
                             {
                                 options: ['All', 'Service Provider', 'Customer'],
-                                selected: roleFilter,
-                                onChange: setRoleFilter,
-                                label: 'All Roles'
+                                selected: roleFilter === 'all' ? 'All' : roleFilter,
+                                onChange: (value) => {
+                                    console.log('Role filter changed from', roleFilter, 'to', value);
+                                    setRoleFilter(value === 'All' ? 'all' : value);
+                                },
+                                label: 'Role'
                             },
                             {
                                 options: ['All', 'Active', 'Blocked', 'Pending'],
-                                selected: statusFilter,
-                                onChange: setStatusFilter,
-                                label: 'All Status'
+                                selected: statusFilter === 'all' ? 'All' : statusFilter,
+                                onChange: (value) => {
+                                    console.log('Status filter changed from', statusFilter, 'to', value);
+                                    setStatusFilter(value === 'All' ? 'all' : value);
+                                },
+                                label: 'Status'
                             }
                         ]}
                         selectedCount={selectedUsers.length}

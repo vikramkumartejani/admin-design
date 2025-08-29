@@ -1,0 +1,169 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "txnId": "TX-001",
+      "bookingId": "BK2032",
+      "user": "Jane M.",
+      "provider": "M-Pesa",
+      "amount": 20000,
+      "status": "Paid",
+      "pspRefId": "MPX-12345",
+      "date": "2025-01-27T10:30:00Z"
+    },
+    {
+      "id": 2,
+      "txnId": "TX-002",
+      "bookingId": "BK2033",
+      "user": "John D.",
+      "provider": "PayPal",
+      "amount": 15000,
+      "status": "Paid",
+      "pspRefId": "PPL-67890",
+      "date": "2025-08-26T14:25:00Z"
+    },
+    {
+      "id": 3,
+      "txnId": "TX-003",
+      "bookingId": "BK2034",
+      "user": "Sarah K.",
+      "provider": "Stripe",
+      "amount": 25000,
+      "status": "Failed",
+      "pspRefId": "STR-11111",
+      "date": "2025-01-25T09:20:00Z"
+    },
+    {
+      "id": 4,
+      "txnId": "TX-004",
+      "bookingId": "BK2035",
+      "user": "Mike R.",
+      "provider": "Square",
+      "amount": 18000,
+      "status": "Paid",
+      "pspRefId": "SQR-22222",
+      "date": "2025-01-24T16:15:00Z"
+    },
+    {
+      "id": 5,
+      "txnId": "TX-005",
+      "bookingId": "BK2036",
+      "user": "Lisa P.",
+      "provider": "M-Pesa",
+      "amount": 12000,
+      "status": "Pending",
+      "pspRefId": "MPX-33333",
+      "date": "2025-01-23T11:10:00Z"
+    },
+    {
+      "id": 6,
+      "txnId": "TX-006",
+      "bookingId": "BK2037",
+      "user": "David W.",
+      "provider": "PayPal",
+      "amount": 30000,
+      "status": "Paid",
+      "pspRefId": "PPL-44444",
+      "date": "2025-01-22T13:05:00Z"
+    },
+    {
+      "id": 7,
+      "txnId": "TX-007",
+      "bookingId": "BK2038",
+      "user": "Emma S.",
+      "provider": "Stripe",
+      "amount": 22000,
+      "status": "Pending",
+      "pspRefId": "STR-55555",
+      "date": "2025-01-21T08:00:00Z"
+    },
+    {
+      "id": 8,
+      "txnId": "TX-008",
+      "bookingId": "BK2039",
+      "user": "Alex T.",
+      "provider": "Square",
+      "amount": 16000,
+      "status": "Failed",
+      "pspRefId": "SQR-66666",
+      "date": "2025-01-20T15:30:00Z"
+    },
+    {
+      "id": 9,
+      "txnId": "TX-009",
+      "bookingId": "BK2040",
+      "user": "Rachel M.",
+      "provider": "M-Pesa",
+      "amount": 28000,
+      "status": "Paid",
+      "pspRefId": "MPX-77777",
+      "date": "2025-01-19T12:45:00Z"
+    },
+    {
+      "id": 10,
+      "txnId": "TX-010",
+      "bookingId": "BK2041",
+      "user": "Tom H.",
+      "provider": "PayPal",
+      "amount": 19000,
+      "status": "Paid",
+      "pspRefId": "PPL-88888",
+      "date": "2025-01-18T10:20:00Z"
+    },
+    {
+      "id": 11,
+      "txnId": "TX-011",
+      "bookingId": "BK2042",
+      "user": "Nina L.",
+      "provider": "Stripe",
+      "amount": 35000,
+      "status": "Failed",
+      "pspRefId": "STR-99999",
+      "date": "2025-01-17T14:15:00Z"
+    },
+    {
+      "id": 12,
+      "txnId": "TX-012",
+      "bookingId": "BK2043",
+      "user": "Chris B.",
+      "provider": "Square",
+      "amount": 14000,
+      "status": "Pending",
+      "pspRefId": "SQR-00000",
+      "date": "2025-01-16T09:30:00Z"
+    },
+    {
+      "id": 13,
+      "txnId": "TX-013",
+      "bookingId": "BK2044",
+      "user": "Maria G.",
+      "provider": "M-Pesa",
+      "amount": 24000,
+      "status": "Paid",
+      "pspRefId": "MPX-11111",
+      "date": "2025-01-15T11:45:00Z"
+    },
+    {
+      "id": 14,
+      "txnId": "TX-014",
+      "bookingId": "BK2045",
+      "user": "James K.",
+      "provider": "PayPal",
+      "amount": 17000,
+      "status": "Paid",
+      "pspRefId": "PPL-22222",
+      "date": "2025-01-14T16:20:00Z"
+    },
+    {
+      "id": 15,
+      "txnId": "TX-015",
+      "bookingId": "BK2046",
+      "user": "Sophie R.",
+      "provider": "Stripe",
+      "amount": 32000,
+      "status": "Failed",
+      "pspRefId": "STR-33333",
+      "date": "2025-01-13T13:10:00Z"
+    }
+  ]
+}

@@ -337,19 +337,28 @@ const ViewListings = () => {
                             {
                                 options: ['All', 'Coaching', 'Digital Services', 'Technology', 'Creative', 'Business'],
                                 selected: categoryFilter === 'all' ? 'All' : categoryFilter,
-                                onChange: (value) => setCategoryFilter(value === 'All' ? 'all' : value),
+                                onChange: (value) => {
+                                    console.log('Category filter changed from', categoryFilter, 'to', value)
+                                    setCategoryFilter(value === 'All' ? 'all' : value)
+                                },
                                 label: 'Category'
                             },
                             {
                                 options: ['All', 'Published', 'Flagged', 'Unpublished'],
                                 selected: statusFilter === 'all' ? 'All' : statusFilter,
-                                onChange: (value) => setStatusFilter(value === 'All' ? 'all' : value),
+                                onChange: (value) => {
+                                    console.log('Status filter changed from', statusFilter, 'to', value)
+                                    setStatusFilter(value === 'All' ? 'all' : value)
+                                },
                                 label: 'Status'
                             },
                             {
                                 options: ['All', '0-1000', '1001-5000', '5001-10000', '10001+'],
                                 selected: priceFilter === 'all' ? 'All' : priceFilter,
-                                onChange: (value) => setPriceFilter(value === 'All' ? 'all' : value),
+                                onChange: (value) => {
+                                    console.log('Price filter changed from', priceFilter, 'to', value)
+                                    setPriceFilter(value === 'All' ? 'all' : value)
+                                },
                                 label: 'Price Range'
                             }
                         ]}

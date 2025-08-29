@@ -39,7 +39,7 @@ const FilterByDropdown: React.FC<FilterByDropdownProps> = ({ options, selected, 
         }
     };
 
-    const displayLabel = (!selected || !options.includes(selected)) ? label : selected;
+    const displayLabel = (!selected || selected === 'All' || !options.includes(selected)) ? label : selected;
 
     return (
         <div className="relative inline-block">

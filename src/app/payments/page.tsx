@@ -1,8 +1,9 @@
+import PaymentSettings from '@/components/Payments/PaymentSettings'
 import React from 'react'
 
 const page = () => {
     return (
-        <div>page</div>
+        <PaymentSettings/>
     )
 }
 

@@ -1,8 +1,9 @@
+import TransactionLogs from '@/components/Payments/TransactionLogs/TransactionLogs'
 import React from 'react'
 
 const page = () => {
     return (
-        <div>page</div>
+        <TransactionLogs/>
     )
 }
 
