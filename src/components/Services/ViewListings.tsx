@@ -42,6 +42,7 @@ const ViewListings = () => {
     const [selectedServiceId, setSelectedServiceId] = useState<number | null>(null)
     const [currentSortKey, setCurrentSortKey] = useState<string>('')
     const [currentDirection, setCurrentDirection] = useState<'asc' | 'desc'>('asc')
+    const [flagReason, setFlagReason] = useState('')
 
     const [columns, setColumns] = useState([
         { key: 'checkbox', label: 'Select', visible: true },
@@ -56,6 +57,22 @@ const ViewListings = () => {
     useEffect(() => {
         loadData()
     }, [])
+
+    // Handle Escape key to close flag modal
+    useEffect(() => {
+        const handleEscapeKey = (event: KeyboardEvent) => {
+            if (event.key === 'Escape' && showFlagModal) {
+                setShowFlagModal(false)
+                setFlagReason('')
+                setSelectedServiceId(null)
+            }
+        }
+
+        if (showFlagModal) {
+            document.addEventListener('keydown', handleEscapeKey)
+            return () => document.removeEventListener('keydown', handleEscapeKey)
+        }
+    }, [showFlagModal])
 
     useEffect(() => {
         filterServices()
@@ -165,6 +182,7 @@ const ViewListings = () => {
 
     const handleFlagService = (serviceId: number) => {
         setSelectedServiceId(serviceId)
+        setFlagReason('') // Reset flag reason when opening modal
         setShowFlagModal(true)
         setOpenPopoverId(null)
     }
@@ -182,7 +200,10 @@ const ViewListings = () => {
     }
 
     const confirmFlagService = () => {
-        if (selectedServiceId) {
+        if (selectedServiceId && flagReason.trim()) {
+            // Here you would typically send the flag reason to your backend
+            console.log(`Flagging service ${selectedServiceId} with reason: ${flagReason}`)
+            
             setServices(prev => prev.map(service =>
                 service.id === selectedServiceId
                     ? { ...service, status: 'Flagged' as const }
@@ -193,9 +214,11 @@ const ViewListings = () => {
                     ? { ...service, status: 'Flagged' as const }
                     : service
             ))
+            
+            setShowFlagModal(false)
+            setSelectedServiceId(null)
+            setFlagReason('')
         }
-        setShowFlagModal(false)
-        setSelectedServiceId(null)
     }
 
     const confirmHideService = () => {
@@ -604,16 +627,75 @@ const ViewListings = () => {
                 </div>
             </div>
 
-            <ConfirmationModal
-                isOpen={showFlagModal}
-                onClose={() => setShowFlagModal(false)}
-                onConfirm={confirmFlagService}
-                title="Flag Service"
-                description="Are you sure you want to flag this service? This action will mark the service for review."
-                confirmText="Flag Service"
-                cancelText="Cancel"
-                icon={<Flag className="w-[26px] h-[26px] text-[#3A96AF]" />}
-            />
+            {/* Custom Flag Modal with Reason Input */}
+            {showFlagModal && (
+                <div 
+                    className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+                    onClick={(e) => {
+                        if (e.target === e.currentTarget) {
+                            setShowFlagModal(false)
+                            setFlagReason('')
+                            setSelectedServiceId(null)
+                        }
+                    }}
+                >
+                    <div className="bg-white rounded-[22px] p-6 max-w-md w-full mx-4 shadow-xl">
+                        <div className="flex items-center gap-3 mb-4">
+                            <div className="w-12 h-12 bg-[#3A96AF] bg-opacity-10 rounded-full flex items-center justify-center">
+                                <Flag className="w-[26px] h-[26px] text-[#3A96AF]" />
+                            </div>
+                            <div>
+                                <h3 className="text-[18px] leading-[24px] font-semibold text-[#252525]">Flag Service</h3>
+                                <p className="text-[14px] leading-[20px] text-[#676D75]">Please provide a reason for flagging this service</p>
+                            </div>
+                        </div>
+                        
+                        <div className="mb-6">
+                            <label htmlFor="flagReason" className="block text-[14px] leading-[20px] font-medium text-[#252525] mb-2">
+                                Reason for flagging *
+                            </label>
+                            <textarea
+                                id="flagReason"
+                                value={flagReason}
+                                onChange={(e) => setFlagReason(e.target.value)}
+                                placeholder="Please explain why you are flagging this service..."
+                                className="w-full h-24 px-3 py-2 border border-[#E8ECF4] rounded-lg text-[14px] leading-[20px] text-[#252525] placeholder-[#676D75] focus:outline-none focus:ring-2 focus:ring-[#3A96AF] focus:border-transparent resize-none"
+                                maxLength={500}
+                            />
+                            <div className="flex justify-between items-center mt-1">
+                                <span className="text-[12px] leading-[16px] text-[#676D75]">
+                                    {flagReason.length}/500 characters
+                                </span>
+                                {flagReason.length > 0 && (
+                                    <span className={`text-[12px] leading-[16px] ${flagReason.length < 10 ? 'text-red-500' : 'text-green-500'}`}>
+                                        {flagReason.length < 10 ? 'Please provide more details' : 'Good'}
+                                    </span>
+                                )}
+                            </div>
+                        </div>
+                        
+                        <div className="flex gap-3 justify-end">
+                            <button
+                                onClick={() => {
+                                    setShowFlagModal(false)
+                                    setFlagReason('')
+                                    setSelectedServiceId(null)
+                                }}
+                                className="px-4 py-2 text-[14px] leading-[20px] font-medium text-[#676D75] border border-[#E8ECF4] rounded-lg hover:bg-gray-50 transition-colors duration-200"
+                            >
+                                Cancel
+                            </button>
+                            <button
+                                onClick={confirmFlagService}
+                                disabled={!flagReason.trim() || flagReason.length < 10}
+                                className="px-4 py-2 text-[14px] leading-[20px] font-medium text-white bg-[#3A96AF] rounded-lg hover:bg-[#2d7a8f] disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors duration-200"
+                            >
+                                Flag Service
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             <ConfirmationModal
                 isOpen={showHideModal}

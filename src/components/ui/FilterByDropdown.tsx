@@ -52,7 +52,7 @@ const FilterByDropdown: React.FC<FilterByDropdownProps> = ({ options, selected, 
                 onClick={() => setOpen(o => !o)}
                 onKeyDown={handleKeyDown}
             >
-                <span className='sm:pt-[1px]'>{displayLabel}</span>
+                <span className='sm:pt-[0.5px]'>{displayLabel}</span>
                 <span className={`ml-1 transition-transform ${open ? 'rotate-180' : ''}`}>
                     <Image src='/assets/icons/arrow-up-dropdown.svg' alt='arrow' width={20} height={20} />
                 </span>

@@ -84,7 +84,7 @@ const UserSignupsOverTime = () => {
                     font: {
                         size: 10
                     },
-                    // padding: 8
+                    padding: 0
                 },
                 border: {
                     display: false
@@ -102,7 +102,7 @@ const UserSignupsOverTime = () => {
                     font: {
                         size: 10
                     },
-                    padding: 8,
+                    padding: 0,
                     callback: (value: any) => {
                         if ([0, 400, 800, 1200, 1600].includes(value)) {
                             return value.toLocaleString()
@@ -162,9 +162,9 @@ const UserSignupsOverTime = () => {
     }
 
     return (
-        <div className="bg-white rounded-[22px] p-6 border border-[#E8ECF4]">
+        <div className="bg-white rounded-[22px] p-4.5 sm:p-6 border border-[#E8ECF4]">
             {/* Header with title and filters */}
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex items-start sm:items-center justify-between sm:flex-row flex-col mb-4">
                 <h3 className="text-[16px] leading-[32px] font-semibold text-[#252525]">
                     User Signups Over Time
                 </h3>
