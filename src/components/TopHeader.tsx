@@ -87,8 +87,7 @@ function TopHeaderContent({
 
   return (
     <>
-      <header className="w-full flex items-center justify-between px-4 lg:px-6 py-3 h-[77px] bg-white border-b border-l border-[#E8ECF4] sticky top-0 z-30">
-        {/* Desktop Breadcrumbs */}
+      <header className="w-full flex items-center justify-between px-4 lg:px-6 py-4 lg:py-5 lg:min-h-[86px] bg-white border-b border-l border-[#E8ECF4] sticky top-0 z-30">
         <div className="hidden xl:flex items-center gap-2 text-nowrap">
           <Link href='/' className={`flex items-center gap-2 text-[18px] leading-[22px] font-normal ${pathname === "/" ? "text-[#3A96AF]" : "text-[#486284]"
             }`}>

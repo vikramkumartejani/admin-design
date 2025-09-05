@@ -152,9 +152,9 @@ export function Sidebar({ onCollapseChange, onMobileClose }: SidebarProps) {
     };
 
     return (
-        <aside
+         <aside
             className={`h-screen bg-white transition-all duration-300 flex flex-col ${collapsed ? "w-[127px]" : "w-[261px]"} fixed z-20`}>
-            <div className={`flex items-center justify-between  ${collapsed ? "py-[4px] bg-white px-3 h-[76px]" : "py-3  bg-[#48628412] px-4 h-[77px]"} `}>
+            <div className={`flex items-center justify-between  ${collapsed ? "py-5 bg-white px-3 min-h-[86px]" : "py-4 lg:py-[26.59px] bg-gray-50 px-4 min-h-[87px]"} `}>
                 <Link href="/" onClick={onMobileClose} >
                     <Image
                         src={collapsed ? "/assets/logo.svg" : "/assets/logo-name.svg"}
@@ -183,8 +183,8 @@ export function Sidebar({ onCollapseChange, onMobileClose }: SidebarProps) {
 
             <div className={`${collapsed ? "w-full max-w-[103px] h-[1px] mx-auto bg-[#E8ECF4]" : ""}`} />
 
-            <nav className="flex-1 mt-4 lg:mt-5 overflow-y-auto hide-scrollbar px-4">
-                <ul className="space-y-2">
+            <nav className="flex-1 py-4 lg:py-6 overflow-y-auto hide-scrollbar px-4">
+                <ul className="space-y-2.5 lg:space-y-4">
                     {menuItems.map((item) => {
                         const Icon = item.icon;
                         const IconFilled = item.iconFilled;
@@ -197,12 +197,12 @@ export function Sidebar({ onCollapseChange, onMobileClose }: SidebarProps) {
                                     <div>
                                         <Link
                                             href={getMainPageForDropdown(item.label)}
-                                            className={`w-full flex items-center gap-3 justify-between px-2.5 lg:px-3 py-2.5 lg:py-3 cursor-pointer rounded-lg
+                                            className={`w-full flex items-center gap-1.5 justify-between px-2.5 lg:px-3 py-2.5 lg:py-3.5 cursor-pointer rounded-lg
                                                 transition-all duration-300
                                                 ${collapsed ? "justify-center" : ""}
                                                 ${isDropdownOpen || isActive
-                                                    ? "bg-[#8291960F]"
-                                                    : "text-[#252525]  hover:bg-[#8291960F]"
+                                                    ? "bg-[#3A96AF] text-white"
+                                                    : "text-[#676D75] hover:bg-[#486284]/6"
                                                 }`}
                                             onClick={() => {
                                                 setOpenDropdown(openDropdown === item.label ? null : item.label);
@@ -211,21 +211,21 @@ export function Sidebar({ onCollapseChange, onMobileClose }: SidebarProps) {
                                         >
                                             <div className="flex items-center gap-2.5">
                                                 {(isDropdownOpen || isActive) ? (
-                                                    <IconFilled className="text-[#3A96AF] w-5 h-5" />
+                                                    <IconFilled className="text-white w-6 h-6" />
                                                 ) : (
-                                                    <Icon className="text-[#252525] w-5 h-5" />
+                                                    <Icon className="text-[#676D75] w-6 h-6" />
                                                 )}
-                                                {!collapsed && <span className={`text-[16px] leading-[24px] font-medium ${(isDropdownOpen || isActive) ? "text-[#252525]" : "text-[#252525]"}`}>{item.label}</span>}
+                                                {!collapsed && <span className=" text-[16px] leading-[24px] font-medium">{item.label}</span>}
                                             </div>
                                             {!collapsed && (
-                                                <ArrowDropdownMenu className={`transition-transform duration-300 ${(isDropdownOpen || isActive) ? "text-[#9A9EA6] -rotate-90" : "text-[#9A9EA6]"}`} />
+                                                <ArrowDropdownMenu className={`transition-transform duration-300 ${(isDropdownOpen || isActive) ? "text-white -rotate-90" : "text-[#676D75]"}`} />
                                             )}
                                         </Link>
                                         {/* Dropdown */}
                                         {openDropdown === item.label && !collapsed && (
                                             <div
                                                 className={`
-                                                   mt-0.5 rounded-lg overflow-hidden
+                                                   mt-2 lg:mt-3 rounded-lg overflow-hidden
                                                     transition-all duration-300 ease-in-out
                                                     ${openDropdown === item.label ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}
                                                 `}
@@ -233,25 +233,18 @@ export function Sidebar({ onCollapseChange, onMobileClose }: SidebarProps) {
                                                     e.stopPropagation();
                                                 }}
                                             >
-                                                <ul className="">
-                                                    {item.dropdown.map((sub) => {
-                                                        const isSubActive = isSubItemActive(sub);
-                                                        return (
-                                                            <li key={sub.label} className="rounded-lg">
-                                                                <Link
-                                                                    href={sub.href}
-                                                                    className={`flex items-center p-2.5 lg:p-3 rounded-lg font-medium hover:bg-[#8291960F] ${isSubActive ? 'bg-[#3A96AF0F] text-[#252525]' : ' text-[#252525]'}`}
-                                                                >
-                                                                    {isSubActive ? (
-                                                                        <span className="inline-block w-2.5 h-2.5 rounded-full ml-[5px] mr-3 bg-[#3A96AF]" />
-                                                                    ) : (
-                                                                        <span className="inline-block w-2.5 h-2.5 ml-[5px] mr-3" />
-                                                                    )}
-                                                                    {sub.label}
-                                                                </Link>
-                                                            </li>
-                                                        );
-                                                    })}
+                                                <ul className="space-y-1.5 lg:space-y-3">
+                                                    {item.dropdown.map((sub) => (
+                                                        <li key={sub.label} className="rounded-lg">
+                                                            <Link
+                                                                href={sub.href}
+                                                                className={`flex items-center p-2.5 lg:p-3 rounded-lg font-medium hover:bg-[#486284]/6 text-[#3A96AF] ${pathname === sub.href || (sub.href === '/customers/profile' && pathname.startsWith('/customers/profile/')) ? 'bg-[#486284]/6' : ''}`}
+                                                            >
+                                                                <span className={`inline-block w-2.5 h-2.5 rounded-full ml-[5px] mr-3 bg-[#3A96AF] ${pathname === sub.href || (sub.href === '/customers/profile' && pathname.startsWith('/customers/profile/')) ? '' : ''}`} />
+                                                                {sub.label}
+                                                            </Link>
+                                                        </li>
+                                                    ))}
                                                 </ul>
                                             </div>
                                         )}
@@ -259,19 +252,19 @@ export function Sidebar({ onCollapseChange, onMobileClose }: SidebarProps) {
                                     ) : (
                                     <Link href={item.href || "/"}>
                                         <button
-                                            className={`cursor-pointer w-full flex items-center gap-3 px-2.5 lg:px-3 py-2.5 lg:py-3 rounded-lg ${collapsed ? "justify-center" : "justify-start"
-                                                } ${isActive ? "bg-[#8291960F]" : "text-[#252525] hover:bg-[#8291960F]"}`}
+                                            className={`cursor-pointer w-full flex items-center gap-3 px-2.5 lg:px-3 py-2.5 lg:py-3.5 rounded-lg ${collapsed ? "justify-center" : "justify-start"
+                                                } ${isActive ? "text-[#3A96AF]" : "text-gray-700 hover:bg-[#486284]/6"}`}
                                                 onClick={() => {
                                                     setOpenDropdown(null);
                                                     onMobileClose?.();
                                                 }}
                                         >
                                             {isActive ? (
-                                                <IconFilled className="text-[#3A96AF] w-5 h-5" />
+                                                <IconFilled className="text-[#3A96AF] w-6 h-6" />
                                             ) : (
-                                                <Icon className="text-[#252525] w-5 h-5" />
+                                                <Icon className="text-[#676D75] w-6 h-6" />
                                             )}
-                                            {!collapsed && <span className={`text-[16px] leading-[20px] font-medium ${isActive ? "text-[#252525]" : "text-[#252525]"}`}>{item.label}</span>}
+                                            {!collapsed && <span className={`text-[16px] leading-[20px] font-medium ${isActive ? "text-[#3A96AF]" : "text-[#676D75]"}`}>{item.label}</span>}
                                         </button>
                                     </Link>
                                 )}
