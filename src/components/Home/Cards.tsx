@@ -19,7 +19,7 @@ const MetricCard: React.FC<MetricCardProps> = ({ icon, title, value }) => {
                 <p className="text-[16px] leading-[27px] font-medium text-[#252525]">
                     {title}
                 </p>
-                <p className="text-[40px] leading-[40px] font-semibold text-[#3A96AF]">
+                <p className="text-[32px] sm:text-[40px] leading-[40px] font-semibold text-[#3A96AF]">
                     {formatNumber(value)}
                 </p>
             </div>

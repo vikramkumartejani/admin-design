@@ -2,7 +2,6 @@ import Link from 'next/link'
 import React from 'react'
 
 const RecentTransactionsReport = () => {
-    // Static transaction data matching the image
     const transactions = [
         {
             id: 1,

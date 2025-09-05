@@ -17,12 +17,15 @@ export default function Home() {
         <UserSignupsOverTime />
         <BookingRevenueTrend />
       </div>
-      <div className=" flex items-start gap-3.5 my-3.5">
-        <div className="w-full max-w-[770px]">
-          <FlaggedHiddenServices />
-        </div>
-        <div className="w-full max-w-[430px]">
-          <Image src='/assets/nice.svg' alt="nice" width={430} height={350} />
+      <div className="flex lg:flex-row flex-col gap-3.5 my-3.5">
+        <FlaggedHiddenServices />
+        <div className="w-full max-w-[430px] relative">
+          <img
+            src="/assets/nice.svg"
+            alt="nice"
+            // fill
+            className="object-contain rounded-md"
+          />
         </div>
       </div>
       <RecentTransactionsReport />
