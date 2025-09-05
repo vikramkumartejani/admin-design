@@ -681,14 +681,14 @@ const ViewListings = () => {
                                     setFlagReason('')
                                     setSelectedServiceId(null)
                                 }}
-                                className="px-4 py-2 text-[14px] leading-[20px] font-medium text-[#676D75] border border-[#E8ECF4] rounded-lg hover:bg-gray-50 transition-colors duration-200"
+                                className="px-4 py-2 text-[14px] leading-[20px] cursor-pointer font-medium text-[#676D75] border border-[#E8ECF4] rounded-lg hover:bg-gray-50 transition-colors duration-200"
                             >
                                 Cancel
                             </button>
                             <button
                                 onClick={confirmFlagService}
                                 disabled={!flagReason.trim() || flagReason.length < 10}
-                                className="px-4 py-2 text-[14px] leading-[20px] font-medium text-white bg-[#3A96AF] rounded-lg hover:bg-[#2d7a8f] disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors duration-200"
+                                className="px-4 py-2 text-[14px] leading-[20px] cursor-pointer font-medium text-white bg-[#3A96AF] rounded-lg hover:bg-[#2d7a8f] disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors duration-200"
                             >
                                 Flag Service
                             </button>
